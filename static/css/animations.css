@@ -1,0 +1,91 @@
+@keyframes fadeIn
+{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeOut
+{
+    from {opacity: 1;}
+    to {opacity: 0.6;}
+}
+
+@keyframes spin
+{ 
+    from {transform: rotate(0deg);}
+    to{transform: rotate(90deg);}
+}
+
+@keyframes moveLeft
+{
+    100% {transform: translateX(-5px);}
+}
+
+@keyframes moveRight
+{
+    100% {transform: translateX(5px);}
+}
+
+@keyframes dimScreen
+{
+    from {}
+    to {background-color: rgba(0, 0, 0, 0.4);}
+}
+
+@keyframes zoomIn
+{
+    100% {transform: scale(1.05, 1.05);}
+}
+
+@keyframes strongerZoomIn
+{
+    100% {transform: scale(1.15, 1.15);}
+}
+
+@keyframes moveUp
+{
+    from {}
+    to {transform: translateY(-5px);}
+}
+
+@keyframes moveDown
+{
+    from {}
+    to {transform: translateY(5px);}
+}
+
+@keyframes moveDowner
+{
+    from {}
+    to {transform: translateY(10px);}
+}
+
+@keyframes play
+{
+    0% {background-color: #500070;}
+    50% {background-color: #200080;}
+    100% {background-color: #500070;}
+}
+
+@keyframes textTransform
+{
+    50% {transform:scale(1.2,1);}
+}
+
+
+@keyframes submitColor
+{
+    from {}
+    to {background-color: white; color: darkblue;}
+}
+
+@keyframes shake
+{
+    10%, 90% {transform: translate3d(-1px, 0, 0px);}
+    
+    20%, 80% {transform: translate3d(2px, 0, 0);}
+  
+    30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+  
+    40%, 60% {transform: translate3d(4px, 0, 0);}
+}

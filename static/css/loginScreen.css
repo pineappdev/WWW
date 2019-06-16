@@ -1,0 +1,103 @@
+@import url("animations.css");
+
+html
+{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+*
+{
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.stretchTextAnimation:hover
+{
+    animation-name: textTransform;
+    animation-duration: 8s;
+}
+
+
+body
+{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: wheat;
+    background-color: #000040;
+    background-image: radial-gradient(ellipse at bottom, #000050, #000020);
+    background-size: 100%;
+}
+
+form
+{
+    border: 2px solid white;
+    border-radius: 2px;
+}
+
+.login
+{
+    grid-row: 2 / 6;
+    grid-column: 5 / 9;
+}
+
+.signup
+{
+    grid-row: 7 / 12;
+    grid-column: 5 / 9;
+}
+
+input[type=text], input[type=password] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    background-color: #ffffff;
+    opacity: 0.9;
+    border-radius: 3px;
+    color: #000050;
+}
+
+button {
+    background-color: #300060;
+    
+    border: 0;
+    border-radius: 5px;
+    
+    color: white;
+    
+    animation-name: play;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+}

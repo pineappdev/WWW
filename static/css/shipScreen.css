@@ -1,0 +1,327 @@
+*
+{
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.closeButtonHolder
+{
+    grid-row: 1;
+    grid-column: 1;
+    width: 3rem;
+    height: 3rem;
+}
+
+
+#shipPopUp
+{
+    width: 60%;
+    height: 100%;
+    max-height: none;
+    /* overflow: auto; */
+    top: 0%;
+    left: 20%;
+    background-color: #000050;
+    
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 4fr 5fr;
+
+}
+
+@media only screen and (max-width: 1200px)
+{
+    #shipPopUp
+    {
+        width: 80%;
+        left: 10%;
+    }
+}
+
+@media only screen and (max-width: 840px)
+{
+    #shipPopUp
+    {
+        width: 100%;
+        left: 0;
+    }
+}
+
+.shipName
+{
+    grid-row: 1;
+    grid-column: 1 / 3;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+}
+
+.shipDescriptionHolder
+{
+    grid-row: 2;
+    grid-column: 1 / 3;
+
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: 1fr 2fr;
+}
+
+.shipImageAndLocationHolder
+{
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 4fr 1fr;
+}
+
+.shipImageHolder
+{
+    grid-column: 1;
+    grid-row: 1;
+    margin: auto;
+}
+
+.shipLocationHolder
+{
+    grid-column: 1;
+    grid-row: 2;
+    color: greenyellow;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.shipLocationText
+{
+    color: greenyellow;
+    text-align: center;
+}
+
+.shipPopUpBottomBar
+{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    grid-column: 1 / 3;
+    grid-row: 3;
+}
+
+.popUpShipImageHolder
+{
+    margin: auto;
+    overflow: hidden;
+}
+
+/*.cargoHolder
+{
+    display: grid;
+
+    margin-left: 5%;
+    margin-right: 5%;
+
+    grid-column: 2;
+    
+    color: white;
+    border: 1px solid wheat;
+    border-radius: 2px;
+}*/
+
+.cargoHolder
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr 3fr 3fr 3fr 1fr;
+    grid-template-columns: 1;
+
+    margin-left: 5%;
+    margin-right: 5%;
+
+    grid-column: 2;
+    
+    color: white;
+    border: 1px solid wheat;
+    border-radius: 2px;
+}
+
+.item:first-child
+{
+    background-color: #000050;
+    display: block;
+    /* height: 40%; */
+    color: wheat;
+    /* border-bottom: 1px solid wheat; */
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+
+.shipPopUpBottomBar
+{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dockDescription
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    grid-row: 3;
+    grid-column: 1;
+}
+
+#dockedAt
+{
+    max-height: 10%;
+}
+
+.shipPopUpPlanetImage
+{
+    max-height: 90%;
+}
+
+.travelAndBuySellChartHolder
+{
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 1fr 12fr;
+
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    /* overflow: auto; */
+}
+
+.Collapsible
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #000050;
+    cursor: pointer;
+    color: white;
+    width: 100%;
+
+    font-size: 15px;
+
+    border: 1.5px solid white;
+    border-radius: 2px;
+}
+
+.active, .Collapsible:hover
+{
+    animation-name: submitColor;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.travelPlanetList
+{
+    display: none;
+    width: 100%;
+    margin-bottom: 2%;
+    /* overflow: auto; */
+    background-color: #000050;
+}
+
+table
+{
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 2px;
+    border-collapse: collapse;
+}
+
+.planetTable
+{
+    border-top: none;
+}
+
+.planetTable tbody:first-child
+{
+    color: wheat;
+}
+
+.planetTable tbody:last-child tr:hover
+{
+    background-color: white;
+    color: #000050;
+    cursor: pointer;
+}
+
+.planetTable tbody tr td:last-child
+{
+    color: lightskyblue;
+}
+
+.planetTable tbody tr td:nth-last-child(2)
+{
+    color: yellowgreen;
+}
+
+.buySellHolder
+{
+    overflow: auto;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: space-between; */
+
+    margin-top: 5%;
+    width: 100%;
+}
+
+.itemTable
+{
+    /* flex: 1; */
+}
+
+.itemTable tr:first-child
+{
+    background-color: white;
+    color: darkblue;
+}
+
+
+.itemTable tr td:last-child:hover
+{
+    background-color: white;
+    color: darkblue;
+    cursor: pointer;
+
+    border-radius: 1px;
+}
+
+.itemTable tr td:first-child:hover
+{
+    background-color: white;
+    color: darkblue;
+    cursor: pointer;
+
+    border-radius: 1px;
+}
+
+.itemTable tr td:nth-child(4)
+{
+    color: lightseagreen;
+}
+
+.itemTable tr td:nth-child(5)
+{
+    color: yellowgreen;
+}
+
+.itemTable tr td:nth-child(6)
+{
+    color: red;
+}
+
+.itemTable img
+{
+    max-width: 20%;
+}

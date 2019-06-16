@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Bargain</title>
+    <link rel="stylesheet" type='text/css' href="/static/css/mainScreen.css">
+</head>
+
+<body>
+
+
+    <!-- SHIP POPUP -->
+    <div class="popUp" id="shipPopUp">
+        <span id="close-button" class="closeButtonHolder" onclick="closeShipPopUp()">&times;</span>
+
+        <span class="shipName"></span>
+
+        <div class="shipImageAndLocationHolder">
+            <img src="" class="shipImageHolder">
+            <span class="shipLocationHolder">
+                <div id="shipLocationText"></div>
+            </span>
+        </div>
+
+        <div class="cargoHolder"></div>
+
+        <div class="dockDescription">
+            <span id="dockedAt"></span>
+            <div class="shipPopUpPlanetImage" onclick="">
+                <img src="">
+            </div>
+        </div>
+
+        <div class="travelAndBuySellChartHolder">
+            <button class="Collapsible" id="travelButton">Travel</button>
+            <div class="travelPlanetList" id="travelPlanetTable">
+                <table class="planetTable">
+                    <tr>
+                        <th>Destination</th>
+                        <th>Location</th>
+                        <th>Time</th>
+                    </tr>
+                    <tbody class="tableBody"></tbody>
+                </table>
+            </div>
+
+            <div class="buySellHolder" id="buySellHolder">
+                <table class="itemTable">
+                    <tr>
+                        <th>Buy</th>
+                        <th>Item</th>
+                        <th>Image</th>
+                        <th>Amount</th>
+                        <th>Price</th>
+                        <th>Sell</th>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PLANET POP UP -->
+    <div class="popUp" id="planetPopUp">
+        <span id="close-button" class="closeButtonHolder" onclick="closePlanetPopup()">&times;</span>
+
+        <div class="planetNameHolder"></div>
+
+        <div class="imageAndItemsHolder">
+            <div class="planetDescriptionHolder">
+                <img src="" class="planetImageHolder">
+                <div class="planetLocationHolder">
+                    <div id="planetLocationText"></div>
+                </div>
+            </div>
+
+            <div class="itemsHolder"></div>
+        </div>
+
+        <div class="dockedShipsHolder">
+            <span class="dockedShipsTitleHolder">Docked Ships</span>
+            <div class="ShipsAndArrowsHolder"></div>
+        </div>
+
+    </div>
+
+    <div id="modal"></div>
+
+    <!-- MAIN SCREEN -->
+
+    <div class="gridWrapper">
+
+        <div class="menu">
+            <menu>
+                <ul id="menuList">
+                    <li id="nick">{{ nickname }}</li>
+                    <li id="credits">Account saldo</li>
+                    <li id="schema" style="display: none">{{ schema }}</li>
+                    <li>Settings</li>
+                </ul>
+            </menu>
+        </div>
+
+        <div class="timeBar">
+            <img src="/static/Images/hourglass.png" style="float:left">
+            <span id="timeText" style="margin-top: auto; margin-bottom: auto;">Time</span>
+        </div>
+
+        <!-- SHIPS -->
+
+        <div class="shipsBar">
+            <span class="shipsBarTitleContainer">Ships</span>
+
+            <div class="shipsAndArrowsContainer">
+
+                <div class="leftArrowContainer leftArrowAnimation" onclick="scrollShipsBackward()">🢐</div>
+                <div class="rightArrowContainer rightArrowAnimation" onclick="scrollShipsForward()">🢒</div>
+
+                <div class="shipsContainer" id="containerOfShips"></div>
+
+            </div>
+
+        </div>
+
+        <!-- PLANETS -->
+
+        <div class="planets" id="mainPlanetContainer">
+            <div id="upArrow" class="upArrow" onclick="scrollPlanetsBackward()">⌃</div>
+            <div id="downArrow" class="downArrow" onclick="scrollPlanetsForward()">⌄</div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/static/scripts/game.js"></script>
+</body>
+
+</html>

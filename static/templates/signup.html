@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/css/signup.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        {% if( username) %}
+        <a>{{ username }}</a>
+        <a href="/logout">Logout</a>
+        {% endif %}
+        {% if (message) %}
+        <a id='message' style='display: none'>{{ message }}</a>
+        {% endif %}
+        <div class="login-container">
+            <form action="/login" method="POST">
+                <input type="text" placeholder="Username" name="username">
+                <input type="password" placeholder="Password" name="password">
+                <button id="but1" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    {% if (username == undefined) %}
+    <form action="/register" style="border:1px solid #ccc" method="POST">
+        <div class="container">
+            <h1>Sign Up</h1>
+
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter username" name="username" required>
+
+            <label for="password"><b>Password</b></label>
+            <input id="password" type="password" placeholder="Enter password" name="password" required
+                onkeyup="check();">
+
+            <label for="password-repeat"><b>Repeat password</b></label>
+            <input id='confirm_password' type="password" placeholder="Repeat password" name="confirm_password" required
+                onkeyup="check();">
+
+            <div class="clearfix">
+                <button id="submit" type="submit" class="signupbtn" disabled>Sign Up</button>
+            </div>
+        </div>
+    </form>
+    {% endif %}
+
+    <br>
+    <br>
+    {% if (username) %}
+    <h3>Upload Json</h3>
+    <form method="POST" action="/sendJson" enctype="multipart/form-data">
+        <label for="jsonName"><b>File name</b></label><br>
+        <input type="text" name="jsonName" style="width: 10%" required><br>
+        <input type="file" name="jsonFile" accept=".json" required><br>
+        <button id="but2" type="submit" class="signupbtn" style="width: 10%">Submit</button>
+    </form>
+    {% endif %}
+
+    <form method="POST" action="/play">
+        <button type="submit" class="signupbtn">PLAY</button>
+    </form>
+
+    <script>
+        if (document.getElementById('message') && document.getElementById('message').innerHTML != '') {
+            alert(document.getElementById('message').innerHTML);
+        }
+
+        let check = function () {
+            if (document.getElementById('password').value ==
+                document.getElementById('confirm_password').value) {
+                document.getElementById('submit').disabled = false;
+            }
+            else {
+                document.getElementById('submit').disabled = true;
+            }
+        }
+    </script>
+</body>
+
+</html>

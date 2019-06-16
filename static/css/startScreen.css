@@ -1,0 +1,334 @@
+@import url("animations.css");
+
+html
+{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+.wrapper
+{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 0px;
+    grid-template-rows: repeat(11, 1fr);
+    justify-items: center;
+}
+
+.wrapHeader
+{
+    position: relative;
+    grid-column: 1 / 7;
+    grid-row: 2;
+}
+
+.wrapMain
+{
+    position: relative;
+    top: 0%;
+    grid-column: 3 / 5;
+    grid-row: 3 / 11;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    justify-items: center;
+}
+
+@media only screen and (max-width: 1200px)
+{
+    .wrapMain
+    {
+        grid-column: 2 / 6;
+    }
+}
+
+@media only screen and (max-width: 600px)
+{
+    .wrapMain
+    {
+        grid-column: 1 / 7; 
+    }
+}
+
+.wrapHighScores
+{
+    grid-column: 1;
+    grid-row: 1 / 6;
+}
+
+
+.wrapPlayButton
+{
+    position: relative;
+    grid-row: 6;
+    grid-column: 1;
+}
+
+.wrapPopup
+{
+    position: relative;
+    grid-column: 1;
+    grid-row: 3 / 5;
+}
+
+.stretchTextAnimation:hover
+{
+    animation-name: textTransform;
+    animation-duration: 8s;
+}
+
+body
+{
+    position: relative;
+    background-color: #000040;
+    background-image: radial-gradient(ellipse at bottom, #000050, #000020);
+    background-size: 100%;
+    margin: 0;
+    text-decoration: none;
+    font-family: sans-serif, serif, Arial, Helvetica;
+    height: 100%;
+}
+
+header
+{
+    margin: 0;
+}
+
+h2
+{
+    text-align: center;
+    color: whitesmoke;
+    margin: 0;
+    border: 0;
+    height: 100%;
+}
+
+form
+{
+    display: grid;
+    justify-items: center;
+
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: 1;
+    height: 100%;
+    text-align: center;
+}
+
+form input
+{
+    background-color: inherit;
+    color: white;
+    border: 2px solid white;
+    font-size: 100%;
+    width: 80%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+form input[type="text"]
+{
+    padding-left: 3%;
+    grid-column: 1;
+    grid-row: 2 / 6;
+}
+
+form input[type="text"]::placeholder
+{
+    color: white;
+    opacity: 0.8;
+}
+
+form input[type="Submit"]
+{
+    grid-column: 1;
+    grid-row: 8 / 12;
+    cursor: pointer;
+}
+
+form input[type="Submit"]:hover
+{
+    animation-name: submitColor;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+form input[type="Submit"]:active
+{
+    animation-name: shake;
+    animation-duration: 1s;
+}
+
+.close-button
+{
+    float: right;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+.close-button:hover
+{
+    animation: spin;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+#highScoresList
+{
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: repeat(11, 1fr);
+
+    border: 3px solid #dddddd;
+    border-radius: 4px;
+
+    background-color: inherit;
+    color: #bbbbbb;
+
+    width: 60%;
+    height: 100%;
+
+    list-style: none;
+}
+
+#highScoresList li
+{
+    grid-column: 1;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 3%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#highScoresList li:first-child
+{
+    font-weight: bold;
+    color: #f2f2f2;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+    font-size: 120%;
+}
+
+#highScoresList li:first-child:hover
+{
+    animation: none;
+}
+
+
+#highScoresList li:last-child
+{
+    border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+}
+
+ #highScoresList li:hover
+{
+    animation-name: textTransform;
+    animation-duration: 1s;
+    color: white;
+}
+
+#playButton
+{
+    cursor: pointer;
+
+    background-color: #300060;
+    
+    border: 0;
+    border-radius: 5px;
+    
+    
+    font-size: 30px;
+    color: white;text-align: center;
+    
+    padding: 15px;
+    padding-right: 0;
+    padding-left: 0;
+    
+    margin: 0;
+
+    width: 60%;
+
+    animation-name: play;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@media only screen and (max-width: 308px)
+{
+    #highScoresList
+    {
+        width: 80%;
+    }
+
+    #playButton
+    {
+        width: 80%;
+    }
+}
+
+#playButton:hover
+{
+    background-color: #303060 !important;
+}
+
+#pseudonimPopup
+{
+    z-index: 1;
+    display: none;
+    top: 28%;
+
+    width: 40%;
+    height: 25%;
+
+    background-color: #000070;
+
+    border-radius: 5px;
+
+    color: white;
+    text-align: center;
+
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    position: fixed;
+}
+
+@media only screen and (max-width: 1200px)
+{
+    #pseudonimPopup
+    {
+        width: 50%;
+        height: 30%;
+    }
+}
+
+@media only screen and (max-width: 750px)
+{
+    #pseudonimPopup
+    {
+        width: 70%;
+        height: 30%;
+    }
+}
+
+@media only screen and (max-width: 450px)
+{
+    #pseudonimPopup
+    {
+        width: 80%;
+    }
+}

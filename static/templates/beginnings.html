@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/css/signup.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        {% if( username ) %}
+        <a>{{ username }}</a>
+        <a href="/logout">Logout</a>
+        {% endif %}
+        {% if (message) %}
+        <a id='message' style='display: none'>{{ message }}</a>
+        {% endif %}
+        <div class="login-container">
+            <form action="/login" method="POST">
+                <input type="text" placeholder="Username" name="username">
+                <input type="password" placeholder="Password" name="password">
+                <button id="but1" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <form method="POST" action="/game" name="playForm" style="display: none;">
+        <input type="text" id="schemaFormName" name="schema" required>
+        <input type="text" name="nickname" value="{{ nickname }}">
+    </form>
+
+    <div class="flex-container" style="padding-top: 20px;">
+        {% for schema in schemas %}
+        <div class="card">
+            <div class="container">
+                <h4><b style="color: white">{{ schema.name }}</b></h4>
+                <p>Ships: {{ schema.ships }}</p>
+                <p>Planets: {{ schema.planets }}</p>
+                <a style="color: wheat" href="/downloadSchema/{{ schema.name }}"
+                    download="{{ schema.name }}.json">Download</a>
+                <button class="miniButton" onclick="play({{ loop.index0 }})">PLAY</button>
+            </div>
+        </div>
+        {% else %}
+        <div class="card">
+            No schemas available, maybe you'll add one?
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+
+    <script>
+        if (document.getElementById('message') && document.getElementById('message').innerHTML != '') {
+            alert(document.getElementById('message').innerHTML);
+        }
+
+        let check = function () {
+            if (document.getElementById('password').value ==
+                document.getElementById('confirm_password').value) {
+                document.getElementById('submit').disabled = false;
+            }
+            else {
+                document.getElementById('submit').disabled = true;
+            }
+        }
+
+        let play = (schema_num) => {
+            document.getElementById('schemaFormName').value = document.getElementsByTagName('b')[schema_num].innerHTML;
+            document.getElementsByName('playForm')[0].submit();
+        };
+    </script>
+</body>
+
+</html>
