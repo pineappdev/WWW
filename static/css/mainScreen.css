@@ -120,6 +120,8 @@ body
 
     padding: 15px;
     font-size: 25px;
+
+    overflow: hidden;
 }
 
 a
@@ -167,6 +169,7 @@ a:visited
     height: 100%;
     grid-template-columns: 5% 90% 5%;
     grid-template-rows: 1;
+    overflow: hidden;
 }
 
 .leftArrowAnimation:hover
@@ -214,6 +217,8 @@ a:visited
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: 1;
     grid-row-gap: 4%;
+
+    overflow: hidden;
 }
 
 .shipContainer
@@ -224,6 +229,8 @@ a:visited
     grid-template-columns: 1;
     grid-template-rows: 1fr 5fr;
     grid-row-gap: 5%;
+
+    overflow: hidden;
 }
 
 .shipDesctiprionContainer
@@ -256,6 +263,8 @@ a:visited
 {
     grid-column: 1;
     grid-row: 2;
+
+    overflow: hidden;
 }
 
 .shipImage

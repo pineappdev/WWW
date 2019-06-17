@@ -214,7 +214,7 @@ app.post('/play', (req, res) => {
 
 prepareDatabase();
 
-let server = app.listen(8080, () => {
+let server = app.listen(2234, () => {
     let host = server.address().address;
     let port = server.address().port;
 
