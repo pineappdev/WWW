@@ -91,6 +91,8 @@
     color: white;
     border: 1px solid wheat;
     border-radius: 2px;
+
+    overflow: hidden;
 }
 
 .item:first-child
@@ -117,6 +119,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    overflow: hidden;
 }
 
 .item:nth-child(even)
@@ -207,7 +211,6 @@
     display: flex;
     flex: 1;
     flex-direction: row;
-    overflow: hidden;
 }
 
 .ShipHolder
@@ -228,7 +231,6 @@
 
 .shipImageHolder
 {
-    overflow: hidden;
     display: flex;
     justify-content: center;
 }
