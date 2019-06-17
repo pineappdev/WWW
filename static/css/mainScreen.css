@@ -122,10 +122,25 @@ body
     font-size: 25px;
 }
 
+a
+{
+    text-decoration: none;
+}
+
+a:link
+{
+    color: white;
+}
+
+a:visited
+{
+    color: white;
+}
+
 .shipsBar
 {
     grid-column: 10 / 13;
-    grid-row: 2 / 9;
+    grid-row: 1 / 9;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.2fr 5fr;
